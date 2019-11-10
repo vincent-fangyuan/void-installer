@@ -54,5 +54,14 @@ echo -e "\e[31mGetting scripts...\e[0m"
 mkdir ~/bin
 cd
 git clone https://github.com/joestandring/countdown
+chmod +x ~/countdown/countdown.sh
+mv ~/countdown/countdown.sh ~/bin/countdown
+rm -rf ~/countdown
 git clone https://github.com/joestandring/void-wiki-cli
+chmod +x ~/void-wiki-cli/void_wiki.sh
+mv ~/void-wiki-cli/void_wiki.sh ~/bin/void-wiki-cli
+rm -rf ~/void-wiki-cli
 git clone https://github.com/joestandring/dwm-bar
+chmod +x ~/dwm-bar/dwm_bar.sh
+mv ~/dwm-bar/dwm_bar.sh ~/bin/dwm-bar
+rm -rf ~/dwm-bar
