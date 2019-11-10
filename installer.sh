@@ -12,11 +12,11 @@ fi
 
 echo -e "\e[31mUpdating and installing packages...\e[0m"
 sudo xbps-install -Su
-sudo xbps-install -S git neovim neofetch curl wget xorg-minimal calcurse setxkbmap dunst NetworkManager NetworkManager-openvpn network-manager-applet pywal feh pkg-config fontconfig-devel libX11-devel libXft-devel ncurses st-terminfo fish-shell compton cmus cmus-flac cmus-pulseaudio pulseaudio alsa-plugins-pulseaudio mpv newsboat ranger 
+sudo xbps-install -S git neovim neofetch curl wget xorg-minimal calcurse setxkbmap dunst NetworkManager NetworkManager-openvpn network-manager-applet pywal feh pkg-config fontconfig-devel libX11-devel libXft-devel ncurses st-terminfo fish-shell compton cmus cmus-flac cmus-pulseaudio pulseaudio alsa-plugins-pulseaudio mpv newsboat ranger transmission socklog-void hack-font-ttf nerd-font-ttf
 
 echo -e "\e[31mCloning dotfiles...\e[0m"
 git clone https://github.com/joestandring/dotfiles
-cp -r dotfiles ~/.dot
+mv dotfiles ~/.dot
 
 echo -e "\e[31mMoving files...\e[0m"
 cp ~/.dot/.bashrc ~
@@ -29,3 +29,20 @@ echo 'polkit.addRule(function(action, subject) {
     return polkit.Result.YES;
   }
 });' | sudo tee /etc/polkit-1/rules.d/50-org.freedesktop.NetworkManager.rules
+
+echo -e "\e[31mConfiguring services...\e[0m"
+sudo ln -s /etc/sv/socklog-unix /var/service
+sudo ln -s /etc/sv/nanoklogd /var/service
+sudo rm -rf /var/service/dhcpcd
+sudo rm -rf /var/service/wpa_supplicant
+sudo ln -s /etc/sv/NetworkManager /var/service
+sudo ln -s /etc/sv/dbus /var/service
+
+echo -e "\e[31mBuilding packages...\e[0m"
+cd ~/.config/st
+sudo make clean install
+cd ~/.config/dwm
+sudo make clean install
+cd ~/.config/dmenu
+sudo make clean install
+cd
