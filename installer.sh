@@ -16,15 +16,16 @@ sudo xbps-install -S git neovim neofetch curl wget xorg-minimal calcurse setxkbm
 
 echo -e "\e[31mCloning dotfiles...\e[0m"
 git clone https://github.com/joestandring/dotfiles
+cp dotfiles ~/.dot
 
 echo -e "\e[31mMoving files...\e[0m"
-cp dotfiles/.bashrc ~
-cp dotfiles/.xinitrc ~
-cp -r dotfiles/.config ~
+cp .dot/.bashrc ~
+cp .dot/.xinitrc ~
+cp -r .dot/.config ~
 
 echo -e "\e[31mConfiguring Network Manager...\e[0m"
-sudo echo 'polkit.addRule(function(action, subject) {
+echo 'polkit.addRule(function(action, subject) {
   if (action.id.indexOf("org.freedesktop.NetworkManager.") == 0 && subject.isInGroup("network")) {
     return polkit.Result.YES;
   }
-});' > /etc/polkit-1/rules.d/50-org.freedesktop.NetworkManager.rules
+});' | sudo tee /etc/polkit-1/rules.d/50-org.freedesktop.NetworkManager.rules
