@@ -67,11 +67,11 @@ mv ~/dwm-bar/dwm_bar.sh ~/bin/dwm-bar
 mv ~/dwm-bar/bar-functions ~/bin
 rm -rf ~/dwm-bar
 
-echo -e "\e[31Configuring Neovim...\e[0m"
+echo -e "\e[31mConfiguring Neovim...\e[0m"
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 	    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-echo -e "\e[31Setting up dwm-bar...\e[0m"
+echo -e "\e[31mSetting up dwm-bar...\e[0m"
 echo -e "TO BE ADDED AFTER DWM-BAR-INSTALLER"
 
-echo -e "\e[31Finished!\nJust startx to jump right in\e[0m"
+echo -e "\e[31mFinished!\nJust startx to jump right in\e[0m"
