@@ -12,7 +12,7 @@ fi
 
 echo -e "\e[31mUpdating and installing packages...\e[0m"
 sudo xbps-install -Su
-sudo xbps-install -S git neovim neofetch curl wget xorg-minimal calcurse setxkbmap dunst NetworkManager NetworkManager-openvpn network-manager-applet pywal feh pkg-config fontconfig-devel libX11-devel libXft-devel ncurses st-terminfo fish-shell compton cmus cmus-flac cmus-pulseaudio pulseaudio alsa-plugins-pulseaudio mpv newsboat ranger transmission socklog-void hack-font-ttf nerd-font-ttf
+sudo xbps-install -S git neovim neofetch curl wget xorg-minimal calcurse setxkbmap dunst NetworkManager NetworkManager-openvpn network-manager-applet pywal feh pkg-config fontconfig-devel libX11-devel libXft-devel ncurses st-terminfo fish-shell compton cmus cmus-flac cmus-pulseaudio pulseaudio alsa-plugins-pulseaudio mpv newsboat ranger transmission socklog-void font-hack-ttf nerd-font-ttf make cparser
 
 echo -e "\e[31mCloning dotfiles...\e[0m"
 git clone https://github.com/joestandring/dotfiles
@@ -39,10 +39,3 @@ sudo ln -s /etc/sv/NetworkManager /var/service
 sudo ln -s /etc/sv/dbus /var/service
 
 echo -e "\e[31mBuilding packages...\e[0m"
-cd ~/.config/st
-sudo make clean install
-cd ~/.config/dwm
-sudo make clean install
-cd ~/.config/dmenu
-sudo make clean install
-cd
