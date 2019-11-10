@@ -38,6 +38,10 @@ sudo rm -rf /var/service/wpa_supplicant
 sudo ln -s /etc/sv/NetworkManager /var/service
 sudo ln -s /etc/sv/dbus /var/service
 
+echo -e "\e[31mFirst time color setup...\n[0m"
+wal -i /usr/share/void-artwork/void-logo.png
+~/.config/dunst/wal.sh
+
 echo -e "\e[31mBuilding packages...\e[0m"
 cd ~/.config/st
 sudo make clean install
