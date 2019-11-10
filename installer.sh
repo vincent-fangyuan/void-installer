@@ -39,3 +39,9 @@ sudo ln -s /etc/sv/NetworkManager /var/service
 sudo ln -s /etc/sv/dbus /var/service
 
 echo -e "\e[31mBuilding packages...\e[0m"
+cd ~/.config/st
+sudo make clean install
+cd ~/.config/dwm
+sudo make clean install
+cd ~/.config/dmenu
+sudo make clean install
