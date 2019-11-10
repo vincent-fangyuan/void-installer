@@ -17,11 +17,10 @@ xbps-install -S git neovim neofetch curl wget xorg-minimal calcurse setxkbmap du
 echo -e "\e[31mCloning dotfiles...\e[0m"
 git clone https://github.com/joestandring/dotfiles
 
-#echo -e "\e[31mMoving files...\e[0m"
-#cd dotfiles
-#cp .bashrc ~
-#cp .xinitrc ~
-#cp .config ~
+echo -e "\e[31mMoving files...\e[0m"
+cp dotfiles/.bashrc /home/$USER
+cp dotfiles/.xinitrc /home/$USER
+cp -r dotfiles/.config /home/$USER
 
 echo -e "\e[31mConfiguring Network Manager...\e[0m"
 echo 'polkit.addRule(function(action, subject) {
