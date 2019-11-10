@@ -32,11 +32,17 @@ echo 'polkit.addRule(function(action, subject) {
 
 echo -e "\e[31mConfiguring services...\e[0m"
 sudo ln -s /etc/sv/socklog-unix /var/service
+sudo sv u socklog-unix
 sudo ln -s /etc/sv/nanoklogd /var/service
+sudo sv u nanoklogd
 sudo rm -rf /var/service/dhcpcd
+sudo sv d dhcpcd
 sudo rm -rf /var/service/wpa_supplicant
+sudo sv d wpa_supplicant
 sudo ln -s /etc/sv/NetworkManager /var/service
+sudo sv u NetworkManager
 sudo ln -s /etc/sv/dbus /var/service
+sudo sv u dbus
 
 echo -e "\e[31mFirst time color setup...\n[0m"
 wal -i /usr/share/void-artwork/void-logo.png
