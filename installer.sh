@@ -49,3 +49,10 @@ cd ~/.config/dwm
 sudo make clean install
 cd ~/.config/dmenu
 sudo make clean install
+
+echo -e "\e[31mGetting scripts...\e[0m"
+mkdir ~/bin
+cd
+git clone https://github.com/joestandring/countdown
+git clone https://github.com/joestandring/void-wiki-cli
+git clone https://github.com/joestandring/dwm-bar
