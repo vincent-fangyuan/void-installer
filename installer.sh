@@ -74,4 +74,4 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 echo -e "\e[31Setting up dwm-bar...\e[0m"
 echo -e "TO BE ADDED AFTER DWM-BAR-INSTALLER"
 
-echo -e "Finished!\nJust startx to jump right in"
+echo -e "\e[31Finished!\nJust startx to jump right in\e[0m"
