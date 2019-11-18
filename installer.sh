@@ -12,7 +12,7 @@ fi
 
 echo -e "\e[31mUpdating and installing packages...\e[0m"
 sudo xbps-install -Su
-sudo xbps-install -S git neovim neofetch curl wget xorg-minimal calcurse setxkbmap dunst NetworkManager NetworkManager-openvpn network-manager-applet pywal feh pkg-config fontconfig-devel libXinerama-devel libX11-devel libXft-devel ncurses st-terminfo fish-shell compton cmus cmus-flac cmus-pulseaudio pulseaudio alsa-plugins-pulseaudio mpv newsboat ranger transmission socklog-void font-hack-ttf nerd-fonts-ttf make cparser python3-neovim python-neovim
+sudo xbps-install -S git neovim neofetch curl wget xorg-minimal calcurse setxkbmap dunst NetworkManager NetworkManager-openvpn network-manager-applet pywal feh pkg-config fontconfig-devel libXinerama-devel libX11-devel libXft-devel ncurses st-terminfo fish-shell compton cmus cmus-flac cmus-pulseaudio pulseaudio alsa-plugins-pulseaudio mpv newsboat ranger transmission socklog-void font-hack-ttf nerd-fonts-ttf make cparser python3-neovim python-neovim xdg-user-dirs
 
 echo -e "\e[31mCloning dotfiles...\e[0m"
 git clone https://github.com/joestandring/dotfiles
